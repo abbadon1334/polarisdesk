@@ -13,20 +13,20 @@
             
             @if (TicketPriorities != null)
             {
-                <MudSelect Label="Select Priority" HelperText="Priority" @bind-Value="Detail.TicketPriorityId" >
+                <MudSelect Label="Select Priority" T="Guid" HelperText="Priority" @bind-Value="Detail.TicketPriority.ID">
                     @foreach (var item in TicketPriorities)
                         {
-                        <MudSelectItem Value="@item.InternalId">@item.Name</MudSelectItem>
+                        <MudSelectItem T="Guid" Value="@item.ID">@item.Name</MudSelectItem>
                         }
                 </MudSelect>
             }
             
             @if (TicketStatuses != null)
             {
-                <MudSelect Label="Select Priority" HelperText="Priority" @bind-Value="Detail.TicketStatusId" >
+                <MudSelect Label="Select Status" T="Guid" HelperText="Status" @bind-Value="Detail.TicketStatus.ID" >
                     @foreach (var item in TicketStatuses)
                     {
-                        <MudSelectItem Value="@item.InternalId">@item.Name</MudSelectItem>
+                        <MudSelectItem T="Guid" Value="@item.ID">@item.Name</MudSelectItem>
                     }
                 </MudSelect>
             }
